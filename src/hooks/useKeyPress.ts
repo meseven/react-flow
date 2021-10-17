@@ -7,7 +7,7 @@ export default (keyCode?: KeyCode): boolean => {
   const [keyPressed, setKeyPressed] = useState(false);
 
   useEffect(() => {
-    if (typeof keyCode !== 'undefined') {
+    if (typeof keyCode !== null) {
       const downHandler = (event: KeyboardEvent) => {
         if (!isInputDOMNode(event) && (event.key === keyCode || event.keyCode === keyCode)) {
           event.preventDefault();
